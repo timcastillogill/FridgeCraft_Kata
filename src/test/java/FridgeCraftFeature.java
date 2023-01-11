@@ -13,10 +13,12 @@ public class FridgeCraftFeature {
 	@Mock Clock clock;
 
 	private Fridge fridge;
+	private FridgeRepository fridgeRepository;
 
 	@BeforeEach
 	void setup() {
-	    fridge = new Fridge(clock);
+		fridgeRepository = new FridgeRepository();
+	    fridge = new Fridge(clock, fridgeRepository);
 	}
 
 	@Test

@@ -2,16 +2,17 @@ import java.util.ArrayList;
 
 public class Fridge implements FridgeService {
 	private final Clock clock;
+	private FridgeRepository fridgeRepository;
 
-	ArrayList<fridgeItem> fridgeItems;
-	public Fridge(Clock clock) {
+
+	public Fridge(Clock clock, FridgeRepository fridgeRepository) {
 		this.clock = clock;
-		this.fridgeItems = new ArrayList<fridgeItem>();
+		this.fridgeRepository = fridgeRepository;
 	}
 
 	@Override
 	public void open() {
-		throw new UnsupportedOperationException();
+		fridgeRepository.degrade();
 	}
 
 	@Override
