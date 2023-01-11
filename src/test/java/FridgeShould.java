@@ -11,7 +11,7 @@ import static org.mockito.Mockito.verify;
 class FridgeShould {
 
 	@Mock
-	Clock clock;
+	Date clock;
 	@Mock
 	FridgeRepository fridgeRepository;
 	private Fridge fridge;
@@ -24,7 +24,7 @@ class FridgeShould {
 	@Test
 	public void if_opened_degrade_items_inside_fridge_by_one_hour_if_sealed() {
 		fridge.open();
-		verify(fridgeRepository).degrade();
+		verify(fridgeRepository).degradeFridgeItems();
 	}
 
 }

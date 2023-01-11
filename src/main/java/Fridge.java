@@ -1,18 +1,16 @@
-import java.util.ArrayList;
-
 public class Fridge implements FridgeService {
-	private final Clock clock;
+	private final Date date;
 	private FridgeRepository fridgeRepository;
 
 
-	public Fridge(Clock clock, FridgeRepository fridgeRepository) {
-		this.clock = clock;
+	public Fridge(Date date, FridgeRepository fridgeRepository) {
+		this.date = date;
 		this.fridgeRepository = fridgeRepository;
 	}
 
 	@Override
 	public void open() {
-		fridgeRepository.degrade();
+		fridgeRepository.degradeFridgeItems();
 	}
 
 	@Override
