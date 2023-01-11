@@ -9,8 +9,8 @@ public class FridgeRepository {
 	}
 
 	public void degradeFridgeItems() {
-		for (int i = 0; i < this.currentFridgeStock.size(); i++) {
-			this.currentFridgeStock.get(i).degradeItem();
+		for (FridgeItem fridgeItem : this.currentFridgeStock) {
+			fridgeItem.degradeItem();
 		}
 	}
 

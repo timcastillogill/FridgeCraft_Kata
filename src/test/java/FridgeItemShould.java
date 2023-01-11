@@ -20,8 +20,8 @@ class FridgeItemShould {
 
 	@BeforeEach
 	void setup() {
-		sealedItem = new FridgeItem("Yogurt", date, "sealed", fridgeItemCondition);
-		openedItem = new FridgeItem("Yogurt", date, "opened", fridgeItemCondition);
+		sealedItem = new FridgeItem("Yogurt", date, fridgeItemCondition);
+		openedItem = new FridgeItem("Yogurt", date, fridgeItemCondition);
 	}
 
 	@Test
