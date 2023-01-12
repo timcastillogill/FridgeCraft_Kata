@@ -5,15 +5,17 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
-import static org.assertj.core.api.Assertions.*;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 class FridgeRepositoryShould {
 
-	@Mock Date date;
-	@Mock FridgeItemCondition fridgeItemCondition;
+	@Mock
+	Date date;
+	@Mock
+	FridgeItemCondition fridgeItemCondition;
 	private FridgeRepository fridgeRepository;
 	private ArrayList<FridgeItem> testFridgeItems;
 	private FridgeItem fridgeItem;

@@ -1,14 +1,14 @@
 public class FridgeItemCondition {
-	private String name;
+	private String conditionName;
 	private int rateOfDegradation;
 
-	public FridgeItemCondition(String name, int rateOfDegradation) {
-		this.name = name;
+	public FridgeItemCondition(String conditionName, int rateOfDegradation) {
+		this.conditionName = conditionName;
 		this.rateOfDegradation = rateOfDegradation;
 	}
 
-	public String getName() {
-		return name;
+	public String getConditionName() {
+		return conditionName;
 	}
 
 	public int getRateOfDegradation() {

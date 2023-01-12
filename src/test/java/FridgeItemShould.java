@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -18,15 +17,9 @@ class FridgeItemShould {
 	private FridgeItem sealedItem;
 	private FridgeItem openedItem;
 
-	@BeforeEach
-	void setup() {
-		sealedItem = new FridgeItem("Yogurt", date, fridgeItemCondition);
-		openedItem = new FridgeItem("Yogurt", date, fridgeItemCondition);
-	}
-
 	@Test
 	public void degrade_a_sealed_item_by_one_hour() {
-		given(fridgeItemCondition.getName()).willReturn("sealed");
+		sealedItem = new FridgeItem("Yogurt", date, fridgeItemCondition);
 		given(fridgeItemCondition.getRateOfDegradation()).willReturn(1);
 
 		sealedItem.degradeItem();
@@ -36,7 +29,7 @@ class FridgeItemShould {
 
 	@Test
 	public void degrade_an_open_item_by_five_hours() {
-		given(fridgeItemCondition.getName()).willReturn("opened");
+		openedItem = new FridgeItem("Yogurt", date, fridgeItemCondition);
 		given(fridgeItemCondition.getRateOfDegradation()).willReturn(5);
 
 		openedItem.degradeItem();
@@ -46,7 +39,7 @@ class FridgeItemShould {
 
 	@Test
 	public void adjusts_the_expiry_date_if_expiry_time_collated_reaches_twenty_four() {
-		given(fridgeItemCondition.getName()).willReturn("opened");
+		openedItem = new FridgeItem("Yogurt", date, fridgeItemCondition);
 		given(fridgeItemCondition.getRateOfDegradation()).willReturn(24);
 
 		openedItem.degradeItem();
